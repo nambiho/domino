@@ -1,4 +1,5 @@
 #1 리눅스 설치.
+============
 #4 root password 생성
   sudo passwd root
 #4 notes 그룹 생성

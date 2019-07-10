@@ -1,6 +1,6 @@
 # 리눅스 설치.
 ###  root password 생성
-  sudo passwd root
+>  sudo passwd root
 ### notes 그룹 생성
   groupadd notes
 ### notes 사용자를 만들어서 notes그룹에 넣기

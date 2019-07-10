@@ -2,39 +2,42 @@
 ###  root password 생성
 >  sudo passwd root
 ### notes 그룹 생성
-  groupadd notes
+>  groupadd notes
 ### notes 사용자를 만들어서 notes그룹에 넣기
-  useradd -g notes notes
+>  useradd -g notes notes
 ### notes sudo 권한 부여
-  visudo
-  notes ALL=(ALL:ALL) ALL
+>  visudo
+>  notes ALL=(ALL:ALL) ALL
 ### domino /tmp로 복사
 ### domino 압출 풀기
-  tar -xvf Domino1001...
+>  tar -xvf Domino1001...
 ### 압축 해제된 domino디렉토리에서 root로 설치.
-  sudo ./install
+>  sudo ./install
 ### id파일이 있으면 /local/notesdata로 이동.
 
- 서버 실행과 도미노 설정
+> 서버 실행과 도미노 설정
 
- root로 작업 : CentOS 7 부터는 firewalld로 넘어갔다고 함.
+> root로 작업 : CentOS 7 부터는 firewalld로 넘어갔다고 함.
+~~~
   firewall-cmd --permanent --zone=public --add-port=80/tcp
   firewall-cmd --permanent --zone=public --add-port=1352/tcp
   firewall-cmd --permanent --zone=public --add-port=<proton port>/tcp
+~~~
 
 ### notes.ini설정
+~~~
   Debug_threadid=0
   PROTON_LISTEN_ADDRESS=0.0.0.0
   PROTON_LISTEN_PORT=<proton port>
   Create_R10_Databases=1
-
+~~~
 
 # Nodejs 테스트
 ### root로 작업
-  proton 복사
-  proton 압축해제
-    cd /opt/ibm/domino/notes/latest/linux
-    tar xzvf /tmp/proton-addin-0.2.2.tgz
+  >proton 복사
+  >proton 압축해제
+    >cd /opt/ibm/domino/notes/latest/linux
+    >tar xzvf /tmp/proton-addin-0.2.2.tgz
   proton 설치
     sh -v ./setup_proton.sh
 ### notes client

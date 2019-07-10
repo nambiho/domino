@@ -15,7 +15,7 @@
 >  sudo ./install
 ### id파일이 있으면 /local/notesdata로 이동.
 
-> 서버 실행과 도미노 설정
+* 서버 실행과 도미노 설정
 
 > root로 작업 : CentOS 7 부터는 firewalld로 넘어갔다고 함.
 ~~~
@@ -32,14 +32,21 @@
   Create_R10_Databases=1
 ~~~
 
+* * *
+
 # Nodejs 테스트
 ### root로 작업
-  >proton 복사
-  >proton 압축해제
-    >cd /opt/ibm/domino/notes/latest/linux
-    >tar xzvf /tmp/proton-addin-0.2.2.tgz
-  proton 설치
-    sh -v ./setup_proton.sh
+*proton 복사
+*proton 압축해제
+~~~
+cd /opt/ibm/domino/notes/latest/linux
+tar xzvf /tmp/proton-addin-0.2.2.tgz
+~~~
+*proton 설치
+~~~
+sh -v ./setup_proton.sh
+~~~
+
 ### notes client
   데이터베이스 생성 후  ODS가 53 확인
     53이 아닌 경우 notes.ini에서 Create_R10_Database=1
